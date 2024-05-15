@@ -1,0 +1,376 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="shuttlecock-4152150_960_720.WEBP">
+    <title>Badminton Accessories Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-image: url('JUMPSMASH.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 100px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        #products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .product {
+            background-color: #f4f4f4;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            position: relative; /* Required for absolute positioning of image overlay */
+        }
+		.product img {
+			width: 100px;
+			height: 100px;
+			margin-bottom: 10px;
+			transition: transform 0.3s; /* Add transition effect */
+		}
+
+		.product:hover img {
+			transform: scale(1.2); /* Enlarge image on hover */
+		}
+
+		/* Add overlay to display larger image */
+		.product .image-overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			opacity: 0;
+			transition: opacity 0.3s; /* Add transition effect */
+		}
+
+		.product:hover .image-overlay {
+			opacity: 1; /* Show overlay on hover */
+		}
+
+		.product .image-overlay img {
+			max-width: 200px;
+			max-height: 200px;
+		}
+        
+        }
+
+        .product h3,
+        .product p {
+            color: #333;
+        }
+
+        .product p {
+            color: #666;
+        }
+
+        .add-to-cart {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .buy {
+            background-color: #008CBA;
+        }
+
+        #cart {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #cart h2 {
+            margin-bottom: 10px;
+        }
+
+        #cart-items {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #cart-items li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="color: black;">Linaban Badminton Shop</h1>
+        <div id="category-buttons">
+            <button onclick="filterProducts('all')">All Products</button>
+            <button onclick="filterProducts('rackets')">Badminton Rackets</button>
+            <button onclick="filterProducts('shuttlecocks')">Shuttlecocks</button>
+			<button onclick="filterProducts('grips')">Grips</button>
+        </div>
+    </header>
+    <main>
+        <section id="products">
+            <!-- Rackets -->
+            <div class="product" data-category="rackets">
+                <img src="Yon_ASTROX88SPRO-4U.jpg" alt="Badminton Racket">
+                <h3>Astrox 88S Pro</h3>
+                <p>A high-quality yonex badminton racket.</p>
+                <p>₱10,488.00</p>
+                <button class="add-to-cart" onclick="addToCart('Astrox 88S Pro')">Add to Cart</button>
+				<button class="buy" onclick="buy('Astrox 88S Pro')">Buy</button>
+            </div>
+			<div class="product" data-category="rackets">
+                <img src="Astrox 88D Pro.WEBP" alt="Badminton Racket">
+                <h3>Astrox 88D Pro</h3>
+                <p>A high-quality yonex badminton racket.</p>
+                <p>₱10,588.00</p>
+                <button class="add-to-cart" onclick="addToCart('Astrox 88S Pro')">Add to Cart</button>
+				<button class="buy" onclick="buy('Astrox 88S Pro')">Buy</button>
+            </div>
+			<div class="product" data-category="rackets">
+                <img src="Astrox 88S 2024.WEBP" alt="Badminton Racket">
+                <h3>Astrox 88S Pro 2024</h3>
+                <p>A high-quality yonex badminton racket.</p>
+                <p>₱29.99</p>
+                <button class="add-to-cart" onclick="addToCart('Astrox 88S Pro')">Add to Cart</button>
+				<button class="buy" onclick="buy('Astrox 88S Pro')">Buy</button>
+            </div>
+			<div class="product" data-category="rackets">
+                <img src="/Astrox 88D 2024.WEBP" alt="Badminton Racket">
+                <h3>Astrox 88D Pro 2024</h3>
+                <p>A high-quality yonex badminton racket.</p>
+                <p>₱8,588.00</p>
+                <button class="add-to-cart" onclick="addToCart('Astrox 88S Pro')">Add to Cart</button>
+				<button class="buy" onclick="buy('Astrox 88S Pro')">Buy</button>
+            </div>
+			<div class="product" data-category="rackets">
+                <img src="Astrox 99 White.WEBP" alt="Badminton Racket">
+                <h3>Astrox 99 "WHITE" Pro</h3>
+                <p>A high-quality yonex badminton racket.</p>
+                <p>₱7,588.00/p>
+                <button class="add-to-cart" onclick="addToCart('Astrox 88S Pro')">Add to Cart</button>
+				<button class="buy" onclick="buy('Astrox 88S Pro')">Buy</button>
+            </div>
+			<div class="product" data-category="rackets">
+                <img src="AX99P_1200x1200.WEBP" alt="Badminton Racket">
+                <h3>Astrox 99 "RED" Pro</h3>
+                <p>A high-quality yonex badminton racket.</p>
+                <p>₱8,588.00/p>
+                <button class="add-to-cart" onclick="addToCart('Astrox 88S Pro')">Add to Cart</button>
+				<button class="buy" onclick="buy('Astrox 88S Pro')">Buy</button>
+            </div>
+			<div class="product" data-category="rackets">
+                <img src="nanoflare-1000z.WEBP" alt="Badminton Racket">
+                <h3>Nanoflare 1000z</h3>
+                <p>A high-quality yonex badminton racket.</p>
+                <p>₱9,588.00</p>
+                <button class="add-to-cart" onclick="addToCart('Astrox 88S Pro')">Add to Cart</button>
+				<button class="buy" onclick="buy('Astrox 88S Pro')">Buy</button>
+            </div>
+			<div class="product" data-category="rackets">
+                <img src="Nanoflare 800 Pro.WEBP" alt="Badminton Racket">
+                <h3>Nanoflare 800 Pro</h3>
+                <p>A high-quality yonex badminton racket.</p>
+                <p>₱9,588.00</p>
+                <button class="add-to-cart" onclick="addToCart('Astrox 88S Pro')">Add to Cart</button>
+				<button class="buy" onclick="buy('Astrox 88S Pro')">Buy</button>
+            </div>
+			<div class="product" data-category="rackets">
+                <img src="Astrox 77 Pro.WEBP" alt="Badminton Racket">
+                <h3>Astrox 77 Pro</h3>
+                <p>A high-quality yonex badminton racket.</p>
+                <p>₱9,588.00</p>
+                <button class="add-to-cart" onclick="addToCart('Astrox 88S Pro')">Add to Cart</button>
+				<button class="buy" onclick="buy('Astrox 88S Pro')">Buy</button>
+            </div>
+			<div class="product" data-category="rackets">
+                <img src="Astrox 100zz.WEBP" alt="Badminton Racket">
+                <h3>Astrox 100zz</h3>
+                <p>A high-quality yonex badminton racket.</p>
+                <p>₱9,588.00</p>
+                <button class="add-to-cart" onclick="addToCart('Astrox 88S Pro')">Add to Cart</button>
+				<button class="buy" onclick="buy('Astrox 88S Pro')">Buy</button>
+            </div>
+			<div class="product" data-category="rackets">
+                <img src="arcsaber7pro_900x.WEBP" alt="Badminton Racket">
+                <h3>Arcsaber 7 Pro</h3>
+                <p>A high-quality yonex badminton racket.</p>
+                <p>₱10,588.00</p>
+                <button class="add-to-cart" onclick="addToCart('Astrox 88S Pro')">Add to Cart</button>
+				<button class="buy" onclick="buy('Astrox 88S Pro')">Buy</button>
+            </div>
+			<div class="product" data-category="rackets">
+                <img src="Arcsaber11pro.jpg" alt="Badminton Racket">
+                <h3>Acsaber 11 Pro</h3>
+                <p>A high-quality yonex badminton racket.</p>
+                <p>₱9,588.00</p>
+                <button class="add-to-cart" onclick="addToCart('Astrox 88S Pro')">Add to Cart</button>
+				<button class="buy" onclick="buy('Astrox 88S Pro')">Buy</button>
+            </div>
+            <!-- Add more racket products here -->
+			
+            <!-- Shuttlecocks -->
+            <div class="product" data-category="shuttlecocks">
+                <img src="AEROSENSA 50.jpg" alt="Shuttlecock">
+                <h3>Aerosensa 50 Yonex</h3>
+                <p>A high-quality shuttlecock for your badminton games.</p>
+                <p>₱1120.99</p>
+                <button class="add-to-cart" onclick="addToCart('Aerosensa 50 Yonex')">Add to Cart</button>
+				<button class="buy" onclick="buy('Aerosensa 50 Yonex')">Buy</button>
+            </div>
+			<div class="product" data-category="shuttlecocks">
+                <img src="AEROSENSA 40.jpg" alt="Shuttlecock">
+                <h3>Aerosensa 40 Yonex</h3>
+                <p>A high-quality shuttlecock for your badminton games.</p>
+                <p>₱1120.99</p>
+                <button class="add-to-cart" onclick="addToCart('Aerosensa 50 Yonex')">Add to Cart</button>
+				<button class="buy" onclick="buy('Aerosensa 50 Yonex')">Buy</button>
+            </div>
+			<div class="product" data-category="shuttlecocks">
+                <img src="AEROSENSA 30.jpg" alt="Shuttlecock">
+                <h3>Aerosensa 30 Yonex</h3>
+                <p>A high-quality shuttlecock for your badminton games.</p>
+                <p>₱1120.99</p>
+                <button class="add-to-cart" onclick="addToCart('Aerosensa 50 Yonex')">Add to Cart</button>
+				<button class="buy" onclick="buy('Aerosensa 50 Yonex')">Buy</button>
+            </div>
+			<div class="product" data-category="shuttlecocks">
+                <img src="AEROSENSA 20.jpg" alt="Shuttlecock">
+                <h3>Aerosensa 20 Yonex</h3>
+                <p>A high-quality shuttlecock for your badminton games.</p>
+                <p>₱1120.99</p>
+                <button class="add-to-cart" onclick="addToCart('Aerosensa 50 Yonex')">Add to Cart</button>
+				<button class="buy" onclick="buy('Aerosensa 50 Yonex')">Buy</button>
+            </div>
+			<div class="product" data-category="shuttlecocks">
+                <img src="AEROSENSA 10.WEBP" alt="Shuttlecock">
+                <h3>Aerosensa 10 Yonex</h3>
+                <p>A high-quality shuttlecock for your badminton games.</p>
+                <p>₱1120.99</p>
+                <button class="add-to-cart" onclick="addToCart('Aerosensa 50 Yonex')">Add to Cart</button>
+				<button class="buy" onclick="buy('Aerosensa 50 Yonex')">Buy</button>
+            </div>
+			<div class="product" data-category="shuttlecocks">
+                <img src="AEROCLUB TR.jpg" alt="Shuttlecock">
+                <h3>Yonex Aeroclub TR</h3>
+                <p>A high-quality shuttlecock for your badminton games.</p>
+                <p>₱1120.99</p>
+                <button class="add-to-cart" onclick="addToCart('Aerosensa 50 Yonex')">Add to Cart</button>
+				<button class="buy" onclick="buy('Aerosensa 50 Yonex')">Buy</button>
+            </div>
+            <!-- Add more shuttlecock products here -->
+			
+			<!-- Grips -->
+        </section>
+			<div class="product" data-category="grips">
+                <img src="Yonex_Super_Grap_30.jpg" alt="grips">
+                <h3>Yonex 30 PCS Rubber Grip</h3>
+                <p>A high-quality grips for your badminton games.</p>
+                <p>₱120.99</p>
+                <button class="add-to-cart" onclick="addToCart('Yonex 30 PCS Rubber Grip')">Add to Cart</button>
+				<button class="buy" onclick="buy('Yonex 30 PCS Rubber Grip')">Buy</button>
+            </div>
+			<div class="product" data-category="grips">
+                <img src="Towel Grip.jpg" alt="grips">
+                <h3>Yonex Towel Grip</h3>
+                <p>A high-quality grips for your badminton games.</p>
+                <p>₱120.99</p>
+                <button class="add-to-cart" onclick="addToCart('Yonex Towel Grip')">Add to Cart</button>
+				<button class="buy" onclick="buy('Yonex Towel Grip')">Buy</button>
+            </div>			
+			<div class="product" data-category="grips">
+                <img src="Yonex Team.jpg" alt="grips">
+                <h3>Yonex Super Grap Team</h3>
+                <p>A high-quality grips for your badminton games.</p>
+                <p>₱120.99</p>
+                <button class="add-to-cart" onclick="addToCart('Yonex Super Grap Team')">Add to Cart</button>
+				<button class="buy" onclick="buy('Yonex Super Grap Team')">Buy</button>
+            </div>		
+			<div class="product" data-category="grips">
+                <img src="Wet Grap.WEBP" alt="grips">
+                <h3>Yonex Wet Super Grap(3 Wraps)</h3>
+                <p>A high-quality grips for your badminton games.</p>
+                <p>₱120.99</p>
+                <button class="add-to-cart" onclick="addToCart('Yonex Wet Super Grap(3 Wraps)')">Add to Cart</button>
+				<button class="buy" onclick="buy('Yonex Wet Super Grap(3 Wraps)')">Buy</button>
+            </div>		
+			<div class="product" data-category="grips">
+                <img src="DRY SUPERGRAP.WEBP" alts="grips">
+                <h3>Yonex Dry Super Grap(30 Wraps)</h3>
+                <p>A high-quality grips for your badminton games.</p>
+                <p>₱120.99</p>
+                <button class="add-to-cart" onclick="addToCart('Yonex Dry Super Grap(30 Wraps)')">Add to Cart</button>
+				<button class="buy" onclick="buy('Yonex Dry Super Grap(30 Wraps)')">Buy</button>
+            </div>
+
+        <!-- Cart -->
+        <div id="cart">
+            <h2>Shopping Cart</h2>
+            <ul id="cart-items"></ul>
+        </div>
+    </main>
+
+    <script>
+        const cartItems = [];
+
+        function filterProducts(category) {
+            const products = document.querySelectorAll('.product');
+            products.forEach(product => {
+                if (category === 'all' || product.dataset.category === category) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+
+        function addToCart(item) {
+            cartItems.push(item);
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItemsElement = document.getElementById('cart-items');
+            cartItemsElement.innerHTML = '';
+            cartItems.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                cartItemsElement.appendChild(li);
+            });
+        }
+
+        function buy(item) {
+			const paymentMethod = prompt("Please select a payment method:\nGCASH\nCOD(CashOnDelivery)\nCREDIT CARD");
+			const quantity = prompt("How many items do you want?");
+			const address = prompt("Please enter your address:");
+			const contactNumber = prompt("Contact Number:");
+			const message = `You have purchased:
+			Item: ${quantity} ${item}(s)
+			Payment Method: ${paymentMethod}
+			Address: ${address}
+			Contact Number: ${contactNumber}`;
+			alert(message);
+		}	
+    </script>
+</body>
+</html>
